@@ -176,6 +176,7 @@ form button:hover {
 footer {
     margin: 0;
     padding: 20px; /* Adjust as needed */
+    bottom: 0; /* Sticks the footer to the bottom */
     background-color: #01be6f59; /* Ensure consistent styling */
 }
 /* Responsive styles for phones */
