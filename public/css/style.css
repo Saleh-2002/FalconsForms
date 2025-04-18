@@ -1,0 +1,222 @@
+body{
+    background-image: url("../images/BG.png");
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: repeat-y; /* Prevents the background image from repeating */
+    margin: 0; /* Removes default margin */
+    color: white;
+}
+.main {
+    width: 60%;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    height: 100%; /* Adjust as needed */
+    border-radius: 15px; /* Adds rounded corners */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    background-size: auto; /* Keeps the original size of the image */
+    background-repeat: repeat-y; /* Repeats the image vertically */
+    background-position: center; /* Centers the image horizontally */
+    overflow: hidden; /* Ensures content stays within rounded borders */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+    backdrop-filter: blur(5px); /* Adds a frosted glass effect */
+    border: 1px solid transparent; /* Thinner transparent border */
+    border-image: linear-gradient(to bottom, #01BE6E, #01BE6E 50%, rgba(1, 190, 110, 0) 100%);
+    border-image-slice: 1; /* Ensures the gradient is applied to the border */
+    position: relative; /* Required for the glowing effect */
+    animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    font-family: 'Arial', sans-serif; /* Default font family */
+    margin-bottom: 0; /* Ensures no extra space below the main container */
+
+}
+
+/* Add a glowing light effect */
+.main::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 20px; /* Matches the border-radius of .main */
+    background: linear-gradient(45deg,#01be6f41, #122126);
+    filter: blur(10px); /* Creates the glowing effect */
+    z-index: -1; /* Places the glow behind the .main container */
+    animation: glow 2s infinite alternate; /* Adds a pulsing animation */
+}
+
+/* Glow animation */
+@keyframes glow {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Add a hover effect for interactivity */
+
+
+ul {
+    position: fixed;
+    top: 0; /* Aligns the list to the top of the viewport */
+    right: 0;
+    list-style-type: none; /* Removes default list styling */
+}
+
+.buttons {
+    display: flex; /* Aligns buttons horizontally */
+    justify-content: center; /* Centers the buttons */
+    align-items: center; /* Vertically centers the buttons */
+    bottom: 20px; /* Adds spacing from the bottom */
+    width: 100%; /* Ensures the buttons span the width of the container */
+    gap: 20px; /* Adds space between buttons */
+}
+
+.buttons button {
+    background: linear-gradient(45deg, #01BE6E, #01be6fb3); /* Adds a gradient background */
+    border: none; /* Removes default border */
+    color: white; /* White text color */
+    padding: 15px 32px; /* Adds padding */
+    text-align: center; /* Centers the text */
+    text-decoration: none; /* Removes underline from links */
+    font-size: 16px; /* Sets font size */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 12px; /* Rounds the corners of the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.buttons button:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhances the shadow on hover */
+    background: linear-gradient(45deg, #01BE6E, #01be6fb3); /* Reverses the gradient on hover */
+}
+h1 {
+    text-align: center; /* Centers the heading */
+    font-size: 2.5em; /* Sets font size */
+    margin-top: 20px; /* Adds margin to the top */
+    color: white; /* Sets text color to white */
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Label styling */
+form label {
+    
+    font-size: 1.2rem;
+    text-align: left;
+    color: #f0f0f0;
+}
+
+/* Input fields styling */
+form input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Input hover and focus effects */
+form input:hover,
+form input:focus {
+    border-color: #01BE6E;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+form button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background: linear-gradient(45deg, #01BE6E, #01be6f8f);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Button hover effect */
+form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #01BE6E, #01BE6E);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* General styles remain the same */
+footer {
+    margin: 0;
+    padding: 20px; /* Adjust as needed */
+    background-color: #01be6f59; /* Ensure consistent styling */
+}
+/* Responsive styles for phones */
+@media (max-width: 768px) {
+    .main {
+        width: 80%; /* Adjusts the width for smaller screens */
+        height:100%; /* Allows the height to adjust based on content */
+        padding-bottom: 30px;
+        margin-top: 100px; /* Reduces the top margin */
+        border-radius: 10px; /* Slightly smaller rounded corners */
+        font-family: 'Verdana', sans-serif; /* Changes font family for phones */
+        animation: fadeIn 1s ease-in-out; /* Ensures animation works on phones */
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduces the font size of the heading */
+        margin-top: 10px; /* Reduces the top margin */
+    }
+
+    p, form label {
+        font-size: 0.9rem; /* Reduces text size for better readability */
+    }
+
+    form input {
+        font-size: 0.8rem; /* Reduces input font size */
+        padding: 8px; /* Adjusts padding for smaller screens */
+    }
+
+    form button {
+        font-size: 0.9rem; /* Reduces button font size */
+        padding: 10px; /* Adjusts padding for smaller screens */
+    }
+
+    .buttons {
+        gap: 10px; /* Reduces the gap between buttons */
+    }
+
+    .buttons button {
+        width: 100px; /* Makes buttons full-width */
+        padding: 10px; /* Adjusts padding for smaller screens */
+        font-size: 0.8rem; /* Adjusts font size for better readability */
+    }
+}

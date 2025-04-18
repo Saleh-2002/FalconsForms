@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+    <div align="center">
+        <div class="main">
+
+            <h1>تذكرة عادية</h1>
+            <form id="regTicketForm" action="/submit-regular-ticket" method="POST">
+                <label for="fullName">الاسم الكامل:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل">
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني">
+
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" name="phone" dir="rtl" placeholder="أدخل رقم هاتفك مثال">
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>

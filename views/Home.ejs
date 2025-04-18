@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+<div align="center">
+    <div class="main" style="background-color: black; padding: 20px; color: white; direction: rtl;">
+        <h1>تفاصيل الحدث</h1>
+        <p>مرحبًا بكم في موقعنا الرسمي لحجز تذاكر المباريات! هنا ستجد جميع المعلومات المتعلقة بالحدث القادم.</p>
+
+        <!-- Brief Explanation Section -->
+        <div style="margin: 20px 0; text-align: right;">
+            <h2>نبذة عن المباراة:</h2>
+            <p>
+                مباراة نهائي الدوري هي واحدة من أكثر المباريات إثارة وتشويقًا في الموسم. تجمع هذه المباراة بين أفضل الفرق
+                في الدوري للتنافس على اللقب. استعدوا لتجربة مليئة بالحماس والتشجيع في أجواء لا تُنسى!
+            </p>
+        </div>
+
+        <!-- Event Information Section -->
+        <div style="margin: 20px 0; text-align: right;">
+            <h2>معلومات الحدث:</h2>
+            <p><strong>اسم الحدث:</strong> مباراة نهائي الدوري</p>
+            <p><strong>التاريخ:</strong> 25 أبريل 2025</p>
+            <p><strong>الموقع:</strong> استاد الملك فهد الدولي، الرياض</p>
+            <p><strong>الوصف:</strong> استمتع بمباراة مثيرة بين أفضل الفرق في الدوري. لا تفوت الفرصة لحضور هذا الحدث
+                المميز!</p>
+        </div>
+
+        <!-- Buttons Section -->
+        <p>لديك التذكرة بالفعل؟</p>
+        <div class="buttons">
+            <button onclick="window.location.href='/regticket'">التذكرة العادية</button>
+            <button onclick="window.location.href='/specticket'">التذكرة المميزة</button>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>

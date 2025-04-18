@@ -1,0 +1,22 @@
+<%- include('partials/header.ejs') %>
+    <div align="center">
+        <div class="main">
+            <h1>تذكرة مميزة</h1>
+            <form id="specTicketForm" action="/submit-special-ticket" method="POST">
+                <label for="fullName">الاسم الكامل:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل">
+
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني">
+
+                <label for="phone">رقم الهاتف:</label>
+                <input type="tel" id="phone" dir="rtl" name="phone" placeholder="أدخل رقم هاتفك">
+
+                <label for="ticketCode">رمز التذكرة:</label>
+                <input type="text" id="ticketCode" name="ticketCode" placeholder="أدخل رمز التذكرة الخاصة بك">
+
+                <button type="submit">إرسال</button>
+            </form>
+        </div>
+    </div>
+    <%- include('partials/footer.ejs') %>
