@@ -13,7 +13,8 @@ const app = express();
 const Port = 3000;
 
 // File path
-const filePath = path.join(process.cwd(), 'data', 'users.xlsx');
+const baseDir = process.env.RENDER ? '/data' : path.join(process.cwd(), 'data');
+const filePath = path.join(baseDir, 'users.xlsx');
 
 
 
@@ -26,7 +27,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use('/node_modules', express.static('node_modules'));
-
+/*
+THIS CODE WAS WRITTEN BY SALEH ALGHOOL 2025 Copyright (c)
+*/ 
 // ------------------- 🔧 Excel Helper Function -------------------
 
 function saveToExcel(userData) {
