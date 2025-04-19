@@ -1,7 +1,67 @@
+<style>
+    .card {
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        margin: 20px;
+    }
+
+    .main {
+        padding-top: 30px;
+    }
+
+    .temp {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+    }
+
+  
+
+    @media (max-width: 768px) {
+        .temp {
+            flex-direction: column; /* Stack items vertically */
+            gap: 10px; /* Reduce the gap between items */
+        }
+
+        .temp li {
+            width: 90%; /* Make each item take the full width */
+            text-align: center; /* Center-align the content */
+        }
+    }
+</style>
 <%- include('partials/header.ejs') %>
     <div align="center">
+        <h1 style="color: gold;">التذكرة الخاصة</h1>
+        <h3 style="font-weight: bold; ">مميزاتها</h3>
+        <ul class="temp" dir="rtl" style="position: unset; font-size: 0.8rem; display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
+            <li style="border: 1px solid #ccc; border-radius: 5px; padding: 5px;">
+              <h2>الدخول للفعالية</h2>
+              <p>استمتع بتجربة الحدث من الداخل بكامل تفاصيله.</p>
+            </li>
+            <li style="border: 1px solid #ccc; border-radius: 5px; padding: 5px;">
+              <h2>حضور الأنشطة العامة</h2>
+              <p>شارك في ورش العمل والألعاب والفعاليات الترفيهية.</p>
+            </li>
+            <li style="border: 1px solid #ccc; border-radius: 5px; padding: 5px;">
+              <h2>التسجيل في البطولات</h2>
+              <p>ادخل في التحديات الرسمية ونافس على الجوائز.</p>
+            </li>
+            <li style="border: 1px solid #ccc; border-radius: 5px; padding: 5px;">
+              <h2>لقاء خاص مع اللاعبين (Meet & Greet)</h2>
+              <p>احصل على فرصة للقاء النجوم والتقاط الصور معهم.</p>
+            </li>
+            <li style="border: 1px solid #ccc; border-radius: 5px; padding: 5px;">
+              <h2>حضور الفعالية الأولى</h2>
+              <p>كن من أوائل الحضور للعروض الافتتاحية المميزة.</p>
+            </li>
+          </ul>
         <div class="main">
-            <h1>تذكرة مميزة</h1>
             <form id="specTicketForm" action="/submit-special-ticket" method="POST">
                 <label for="fullName">الاسم الكامل:</label>
                 <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك الكامل">
@@ -13,7 +73,10 @@
                 <input type="tel" id="phone" dir="rtl" name="phone" placeholder="أدخل رقم هاتفك">
 
                 <label for="ticketCode">رمز التذكرة:</label>
-                <input type="text" id="ticketCode" name="ticketCode" placeholder="أدخل رمز التذكرة الخاصة بك">
+                <input type="text" id="ticketCode" name="ticketCode" placeholder="أدخل رقم فاتورة شراء اللعبة">
+
+                <label for="ticketImage">صورة الطلب:</label>
+                <input type="file" name="ticketImage" id="" ticketImage" accept="image/*" required>
 
                 <button type="submit">إرسال</button>
             </form>

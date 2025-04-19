@@ -1,34 +1,96 @@
 <%- include('partials/header.ejs') %>
-<div align="center">
-    <div class="main" style="background-color: black; padding: 20px; color: white; direction: rtl;">
-        <h1>تفاصيل الحدث</h1>
-        <p>مرحبًا بكم في موقعنا الرسمي لحجز تذاكر المباريات! هنا ستجد جميع المعلومات المتعلقة بالحدث القادم.</p>
-
-        <!-- Brief Explanation Section -->
-        <div style="margin: 20px 0; text-align: right;">
-            <h2>نبذة عن المباراة:</h2>
-            <p>
-                مباراة نهائي الدوري هي واحدة من أكثر المباريات إثارة وتشويقًا في الموسم. تجمع هذه المباراة بين أفضل الفرق
-                في الدوري للتنافس على اللقب. استعدوا لتجربة مليئة بالحماس والتشجيع في أجواء لا تُنسى!
-            </p>
+<style> 
+    @media (max-width: 768px) {
+        .banner {
+            width: 100%;
+            height: auto;
+            max-height: 800px;
+        }
+    }
+</style>
+    <div align="center">
+        <img class="banner" src="images/FFWS.png" height="750px" alt="">
+        <div>
+            <span>للطلب المسبق</span>
+            <ul
+                style="position: unset; font-size: 2rem; display: flex; justify-content: center; align-items: center; gap: 20px; list-style: none; padding: 0;">
+                <li><a  target="_blank" style="text-decoration: none; " href="https://store.epicgames.com/en-US/p/garou-city-of-the-wolves-556c5a"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Epic_Games_logo.svg/882px-Epic_Games_logo.svg.png"
+                            height="50px" alt=""></a></li>
+                <li><a  target="_blank" href="https://store.steampowered.com/app/2492040/FATAL_FURY_City_of_the_Wolves/"><i
+                            class="bi bi-steam"></i></a></li>
+                <li><a  target="_blank"
+                        href="https://www.xbox.com/ar-SA/games/store/%E9%A4%93%E7%8B%BC%E4%BC%9D%E8%AA%AC-city-of-the-wolves-special-edition/9nppw057hbdw"><i
+                            class="bi bi-xbox"></i></a></li>
+                <li><a target="_blank" style="text-decoration: none; "
+                        href="https://store.playstation.com/en-sa/product/JP0576-PPSA19359_00-PS5FFCOTWSPECIAL/"><i
+                            class="bi bi-playstation"></i></a></li>
+            </ul>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+            <span style="color: gold;">متبقي على بداية الحدث :</span>
+            <p id="countdown" style="color: red;"></p> <!-- Countdown Timer -->
         </div>
 
-        <!-- Event Information Section -->
-        <div style="margin: 20px 0; text-align: right;">
-            <h2>معلومات الحدث:</h2>
-            <p><strong>اسم الحدث:</strong> مباراة نهائي الدوري</p>
-            <p><strong>التاريخ:</strong> 25 أبريل 2025</p>
-            <p><strong>الموقع:</strong> استاد الملك فهد الدولي، الرياض</p>
-            <p><strong>الوصف:</strong> استمتع بمباراة مثيرة بين أفضل الفرق في الدوري. لا تفوت الفرصة لحضور هذا الحدث
-                المميز!</p>
+        <!-- Ticket Comparison Cards -->
+        <div style="display: flex; justify-content: center; gap: 20px; margin: 20px 0;">
+            <!-- Regular Ticket Card -->
+            <div class="card"
+                style="width: 300px; background-color: #001225; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; text-align: center; transition: transform 0.3s;">
+                <h2 style="color: #7c7c7c;">التذكرة العادية</h2>
+                <ul dir="rtl" style="position: unset; text-align: right; list-style: circle; font-weight: bold;">
+                    <li>الدخول للفعالية</li>
+                    <li>حضور الانشطة العامة</li>
+                    <li>التسجيل في البطولات</li>
+                    <li>رؤية الفعالية العامة</li> <!-- Added -->
+                </ul>
+                <p style="color: red; font-weight: bold;">ملاحظة: التذكرة مجانية ولكن يجب التسجيل المسبق لضمان دخولك للفعالية</p>
+                <p style="font-weight: bold; color: #007bff;"></p>
+
+            </div>
+        
+            <!-- VIP Ticket Card -->
+            <div class="card"
+                style="width: 300px; background-color: #001225; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; text-align: center; transition: transform 0.3s;">
+                <h2 style="color: #7c7c7c;">تذكرة لمشتري اللعبة</h2>
+                <ul dir="rtl" style="position: unset; text-align: right; list-style: circle; font-weight: bold;">
+                    <li>الدخول للفعالية</li>
+                    <li>حضور الانشطة العامة</li>
+                    <li>التسجيل في البطولات</li>
+                    <li>لقاء خاص مع اللاعبين (Meet & Greet)</li> <!-- Added -->
+                    <li>حضور الفعالية الأولى</li> <!-- Added -->
+                </ul>
+                <p style="font-weight: bold; color: #007bff;"></p>
+            </div>
         </div>
 
-        <!-- Buttons Section -->
-        <p>لديك التذكرة بالفعل؟</p>
         <div class="buttons">
-            <button onclick="window.location.href='/regticket'">التذكرة العادية</button>
-            <button onclick="window.location.href='/specticket'">التذكرة المميزة</button>
+            <h3>احجز تذكرتك الان!</h3>
+            <button id="scrollButton">احجز</button>
+        </div>
+        <div class="main" style="background-color: black; padding: 20px; color: white; direction: rtl;">
+            <h1>تفاصيل الحدث</h1>
+            <p>هنا ستجد جميع المعلومات المتعلقة بالحدث القادم.</p>
+
+            <!-- Brief Explanation Section -->
+ 
+
+            <!-- Event Information Section -->
+            <div style="margin: 20px 0; text-align: right;">
+                <h2>معلومات الحدث:</h2>
+                <p><strong>اسم الحدث: </strong>Fatal Fury: City of the Wolves</p>
+                <p><strong>التاريخ: </strong> 10 july - 12 july 2025</p>
+                <p><strong>الموقع: </strong>الرياض, بوليفارد سيتي</p>
+                <p><strong>الوصف: </strong> استمتع بمباراة مثيرة بين أفضل الفرق في الدوري. لا تفوت الفرصة لحضور هذا الحدث
+                    المميز!</p>
+            </div>
+
+            <!-- Buttons Section -->
+            <p>لديك التذكرة بالفعل؟</p>
+            <div class="buttons">
+                <a style="text-decoration: none;" href='https://webook.com/en/events/fatal-fury-city-of-the-wolves-at-ewc-25' target="_blank"><button   >التذكرة العادية</button></a>
+                <button onclick="window.location.href='/specticket'">تذكرة لمشتري اللعبة</button>
+            </div>
         </div>
     </div>
-</div>
-<%- include('partials/footer.ejs') %>
+    <%- include('partials/footer.ejs') %>
